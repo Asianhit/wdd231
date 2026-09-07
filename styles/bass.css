@@ -121,6 +121,15 @@ h1 {
   border: 1px solid #ccc;
 }
 
+.first-section h2 {
+  background-color: #3D405B;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  font-size: 1rem;
+  margin: 0 0 15px 0;
+  padding: 10px 0;
+}
 .card {
   width: 100%;
 }
