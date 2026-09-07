@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber Home Page || WDD231</title>
+    <meta name="author" content="Samuel Christian Asian">
+    <meta name="description" content="This is a school project for practicing how to build a chamber home page.">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/bass.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <script src="scripts/course.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="site-branding">
+            <img src="images/house-icon.svg" alt="Site Logo" width="20" height="20">
+            <span>Samuel Asian Home Page</span>
+        </div>
+        <button id="ham-btn" class="hamburger" aria-label="Toggle navigation" type="button"></button>
+
+        <nav id="nav-bar" class="navigation" aria-label="Main navigation">
+            <ul>
+                <li class="current"><a href="index.html">Home</a></li>
+                <li><a href="#">Chamber Project</a></li>
+                <li><a href="#">Final Project</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Home</h1>
+
+        <section class="first-section" aria-labelledby="about-me-heading">
+            <article class="card">
+                <h2 id="about-me-heading">About Me</h2>
+                <p>My name is Samuel Christian Asian. I was born and raised in Calabar, Nigeria, which is in West Africa, and I am a student at Brigham Young University,
+                    studying through BYU-Pathway Worldwide with a major in Software Development. I have a strong interest in the financial
+                    markets and enjoy learning about trading and investing. Outside of academics, I enjoy playing football, listening to African music,
+                    exploring technology, and developing my software and financial skills.</p>
+            </article>
+        </section>
+
+        <section class="section-x" aria-labelledby="student-picture-heading">
+            <figure class="card-2">
+                <h2 id="student-picture-heading">Student Picture</h2>
+                <img src="images/me.webp" alt="Profile Picture" loading="lazy" width="100" height="100">
+            </figure>
+        </section>
+
+        <section class="second-sections" aria-labelledby="courses-heading">
+            <h2 id="courses-heading">Web Certificate Courses</h2>
+
+            <div class="category" aria-label="Course categories">
+                <button id="all-btn" type="button">All</button>
+                <button id="cse-btn" type="button">CSE</button>
+                <button id="wdd-btn" type="button">WDD</button>
+            </div>
+
+            <div id="course-cards" class="specific" aria-label="Course list"></div>
+
+            <p id="total-credits">The total credits for the courses listed above is 0.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="socials">
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer"><img src="images/github-brands-solid.svg" alt="Github" loading="lazy" width="16" height="16"></a>
+            <a href="https://www.linkedin.com/in/samuel-asian-b71644352" target="_blank" rel="noopener noreferrer"><img src="images/linkedin-brands-solid.svg" alt="LinkedIn" loading="lazy" width="16" height="16"></a>
+            <a href="https://x.com/samuelasian?s=11" target="_blank" rel="noopener noreferrer"><img src="images/x-twitter.svg" alt="X" loading="lazy" width="16" height="16"></a>
+        </div>
+        <p>© <span id="currentYear"></span> || Samuel Christian Asian 🌺 || Cross River, Nigeria 🌲</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>

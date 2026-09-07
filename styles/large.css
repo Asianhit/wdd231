@@ -1,0 +1,109 @@
+@media screen and (min-width: 550px) {
+
+  /* Center page elements and restrict maximum width */
+  header, main, nav, footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+
+  /* Header Layout */
+  header {
+    display: flex;
+    flex-direction: row;
+    column-gap: 6px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  /* Navigation Layout */
+  .navigation {
+    display: flex;
+    border-bottom: none;
+  }
+
+  .navigation ul {
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .navigation a {
+    display: block;
+  }
+
+  /* Desktop Grid for About Me & Student Picture */
+  main {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 1.5rem;
+  }
+
+  /* Force top heading and lower sections to span across both grid columns */
+  main > h1,
+  .second-sections {
+    grid-column: 1 / -1;
+  }
+
+  /* Make both cards stretch to equal height */
+  .first-section,
+  .section-x {
+    height: 100%;
+    margin: 0;
+  }
+
+  /* Student Picture Card & Image Alignment */
+  .section-x {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+
+  .section-x h2 {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .section-x img {
+    width: 80%;
+    max-width: 200px;
+    height: auto;
+    object-fit: cover;
+    margin: auto 0; 
+  }
+
+  /* Web Certificate Courses Grid */
+  .second-sections {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .second-sections h2 {
+    grid-column: 1 / -1;
+  }
+
+  .second-sections .category,
+  .second-sections .specific {
+    display: contents;
+  }
+
+  .second-sections p {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 10px;
+  }
+}

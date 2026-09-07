@@ -1,0 +1,296 @@
+/*---------------- COLOR SCHEME ------------
+terra cotta: #E07A5F
+deep slate blue: #3D405B
+*/
+
+/*************************** SITE WIDE ********************/
+* {
+  font-family: "Josefin Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+.montserrat- {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+/*********** HEADER ************************/
+header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+  background-color: #eee;
+}
+
+.site-branding {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-branding img {
+  display: block;
+  width: 24px;
+  height: auto;
+}
+
+.site-branding span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #3D405B;
+}
+
+/************* Hamburger Navigation ****************/
+.hamburger {
+  background: none;
+  border: none;
+  color: #3D405B;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.hamburger::after {
+  content: "\2630";
+  font-size: 1.8rem;
+}
+
+.hamburger.show::after {
+  content: "\00D7";
+  font-size: 2rem;
+}
+
+/****************************** NAVIGATION **************************/
+.navigation {
+  display: none;
+  grid-column: 1 / -1;
+}
+
+.navigation.show {
+  display: block;
+}
+
+.navigation ul {
+  list-style-type: none;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+.navigation a {
+  display: block;
+  text-decoration: none;
+  border-bottom: 1px solid #ddd;
+  padding: 0.8rem 10px;
+  color: #333;
+}
+
+.navigation li.current a {
+  background-color: #3D405B;
+  color: #fff;
+}
+
+.navigation a:hover {
+  background-color: #ddd;
+}
+
+/***************** MAIN *******************/
+main {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* Standardized spacing between sections */
+}
+
+h1 {
+  margin: 0;
+  color: #3D405B;
+  font-size: 1.5rem;
+}
+
+/* About Me Section */
+.first-section {
+  background-color: #eee;
+  border: 1px solid #ccc;
+}
+
+.card {
+  width: 100%;
+}
+
+.card h2 {
+  background-color: #3D405B;
+  color: #fff;
+  text-align: center;
+  font-size: 1rem;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.card p {
+  padding: 15px;
+  margin: 0;
+  line-height: 1.5;
+  color: #222;
+}
+
+/* Student Picture Section */
+.section-x {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+.section-x h2 {
+  background-color: #3D405B;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  font-size: 1rem;
+  margin: 0 0 15px 0;
+  padding: 10px 0;
+}
+
+.section-x img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border: 1px solid #bbb;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Web Certificate Courses Section */
+.second-sections {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.second-sections h2 {
+  background-color: #3D405B;
+  color: #fff;
+  text-align: center;
+  font-size: 1rem;
+  margin: 0 0 15px 0;
+  padding: 10px 0;
+}
+
+.second-sections .category {
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 15px;
+  margin-bottom: 15px;
+}
+
+.second-sections .category h3 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  padding: 8px 0;
+  background-color: #ccc;
+  border: 1px solid #999;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.second-sections .specific {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 15px;
+}
+
+.second-sections .specific h4 {
+  text-align: center;
+  margin: 0;
+  padding: 10px 0;
+  background-color: #ccc;
+  border: 1px solid #999;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.second-sections p {
+  text-align: center;
+  margin: 15px 0 0 0;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.second-sections .category button {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  padding: 8px 0;
+  background-color: #ccc;
+  border: 1px solid #666;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #333;
+}
+
+.second-sections .category button:hover {
+  background-color: #3D405B;
+  color: #fff;
+}
+
+/************************ FOOTER ***********************/
+footer {
+  background-color: #eee;
+  padding: 1.2rem 10px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+}
+
+.socials img {
+  width: 20px;
+  height: 20px;
+}
+
+.socials a:hover {
+  background-color: #ddd;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #333;
+}
