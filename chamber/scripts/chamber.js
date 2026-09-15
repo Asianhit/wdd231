@@ -19,7 +19,7 @@ if (hamBtn && navBar) {
 }
 
 // Data Source URL
-const membersUrl = 'data/member.json';
+const membersUrl = 'data/members.json';
 const container = document.querySelector('#directory-container');
 
 // Map Membership Levels (1=Member, 2=Silver, 3=Gold)
