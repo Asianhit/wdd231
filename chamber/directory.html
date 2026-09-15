@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber of Commerce Calabar Demo</title>
+    <meta name="author" content="Samuel Christian Asian">
+    <meta name="description" content="Discover local businesses, connect with entrepreneurs, and support economic growth through our local Chamber of Commerce. Building a stronger, more connected business community">
+    <meta property="og:description" content="Samuel Christian Asian Chamber of Commerce for Calabar, this is a school project, for skill demonstration">
+    <meta property="og:title" content="Chamber of Commerce">
+    <meta property="og:url" content="#">
+    <meta property="og:image" content="https://www.bing.com/images/search?view=detailV2&ccid=%2bLRoL4xD&id=D6221387B84FF54DD44A2D568CC54B2964DC25A5">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/chamber-small.css">
+    <link rel="stylesheet" href="styles/chamber-large.css">
+    <script src="scripts/chamber.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="site-branding">
+            <img src="images/chmaber-logo.webp" alt="Site Logo" width="20" height="20">
+            <span>Calabar Chamber<br>of Commerce</span>
+        </div>
+        
+        <div class="header-controls">
+            <button id="theme-btn" class="icon-btn" aria-label="Toggle Theme" type="button">🌓</button>
+            <button id="ham-btn" class="hamburger" aria-label="Toggle navigation" type="button"></button>
+        </div>
+
+        <nav id="nav-bar" class="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="current"><a href="directory.html">Directory</a></li>
+                <li><a href="#">Join</a></li>
+                <li><a href="#">Discovery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+    <h1 class="title">Directory</h1>
+
+    <!-- View Toggle Controls -->
+    <div class="view-controls">
+        <button id="grid-btn" class="active-view" type="button">Grid</button>
+        <button id="list-btn" type="button">List</button>
+    </div>
+
+    <!-- Dynamic container where fetch inserts members -->
+    <div id="directory-container" class="cards-grid-view"></div>
+</main>
+    <footer>
+        <div class="footer-info">
+            <p><strong>Calabar Chamber of Commerce</strong></p>
+            <p>NO: 10, Duke Runway Avenue</p>
+            <p>Calabar, Cross River State, Nigeria</p>
+            <p>info@calabarchamber.org</p>
+            <p>+234-785-468-7001</p>
+        </div>
+
+        <div class="socials">
+            <a href="https://www.youtube.com/@MindFramePsychology-k1c" target="_blank" rel="noopener noreferrer">
+                <img src="images/youtube-brands-solid.svg" alt="YouTube" loading="lazy" width="20" height="20">
+            </a>
+            <a href="https://www.linkedin.com/in/samuel-asian-b71644352" target="_blank" rel="noopener noreferrer">
+                <img src="images/linkedin-brands-solid.svg" alt="LinkedIn" loading="lazy" width="20" height="20">
+            </a>
+            <a href="https://x.com/samuelasian?s=11" target="_blank" rel="noopener noreferrer">
+                <img src="images/x-twitter.svg" alt="X" loading="lazy" width="20" height="20">
+            </a>
+        </div>
+
+        <div class="footer-meta">
+            <p>© <span id="currentYear"></span> || Samuel Christian Asian 🌺 || Cross River, Nigeria 🌲</p>
+            <p>Last Modified: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+</body>
+</html>

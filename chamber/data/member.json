@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Calabar Beach Resort",
+    "address": "12 Marina Beach Road, Calabar, Cross River",
+    "phone": "+234-803-123-4567",
+    "website": "https://calabarbeachresort.com",
+    "image": "images/profile-image1.webp",
+    "membershipLevel": 3,
+    "description": "Luxury coastal hospitality and event venue."
+  },
+  {
+    "name": "Cross River Tech Hub",
+    "address": "45 Ndidem Usang Iso Road, Calabar",
+    "phone": "+234-802-987-6543",
+    "website": "https://crtechhub.ng",
+    "image": "images/profile-image2.webp",
+    "membershipLevel": 2,
+    "description": "Incubator and co-working space for local tech startups."
+  },
+  {
+    "name": "Tinapa Logistics & Freight",
+    "address": "Free Trade Zone Complex, Tinapa, Calabar",
+    "phone": "+234-805-444-3322",
+    "website": "https://tinapalogistics.com",
+    "image": "images/profile-image3.webp",
+    "membershipLevel": 2,
+    "description": "Global supply chain and cargo movement services."
+  },
+  {
+    "name": "Canaan Green Agriculture",
+    "address": "88 Murtala Mohammed Highway, Calabar",
+    "phone": "+234-801-555-8899",
+    "website": "https://canaangreen.org",
+    "image": "images/profile-image4.webp",
+    "membershipLevel": 1,
+    "description": "Sustainable farming and agro-processing enterprise."
+  },
+  {
+    "name": "Duke Town Medical Center",
+    "address": "15 Eyamba Street, Calabar",
+    "phone": "+234-807-666-1122",
+    "website": "https://duketownmed.com",
+    "image": "images/profile-image5.webp",
+    "membershipLevel": 3,
+    "description": "Comprehensive healthcare and emergency services."
+  },
+  {
+    "name": "Obudu Mountain Travel Co.",
+    "address": "22 Mary Slessor Avenue, Calabar",
+    "phone": "+234-809-777-3344",
+    "website": "https://obudutours.ng",
+    "image": "images/profile-image6.webp",
+    "membershipLevel": 1,
+    "description": "Ecotourism operator and guided mountain expeditions."
+  },
+  {
+    "name": "Calabar Craft Brewery",
+    "address": "33 Airport Road, Calabar",
+    "phone": "+234-810-222-9900",
+    "website": "https://calabarcraftbrew.com",
+    "image": "images/profile-image7.webp",
+    "membershipLevel": 2,
+    "description": "Artisanal beverages crafted with locally sourced ingredients."
+  }
+]
