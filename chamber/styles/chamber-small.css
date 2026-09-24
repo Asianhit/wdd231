@@ -1,90 +1,130 @@
-/* COLOR SCHEME & VARIABLES */
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+
 :root {
-  --primary-color: #00205B;
-  --secondary-color: #E07A5F;
-  --bg-color: #f4f6f8;
+  --primary-color: #0a3161;
+  --primary-dark: #061e3d;
+  --accent-teal: #00afa3;
+  --accent-teal-hover: #00877e;
+  --accent-amber: #f9a602;
+
+  --bg-color: #f1f5f9;
   --card-bg: #ffffff;
-  --header-bg: #d1d5db;
-  --text-dark: #1f2937;
-  --text-muted: #4b5563;
-  --border-radius: 8px;
+
+  --text-dark: #1e293b;
+  --text-light: #ffffff;
+  --text-muted: #64748b;
+
   --gold-badge: #d97706;
   --silver-badge: #64748b;
-  --member-badge: #2563eb;
+  --member-badge: #00afa3;
+
+  --border-radius: 8px;
+  --box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 10%),
+    0 2px 4px -1px rgb(0 0 0 / 6%);
 }
+
+/* ==========================================================================
+   RESET AND BASE STYLES
+   ========================================================================== */
 
 * {
   box-sizing: border-box;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  color: var(--text-dark);
-  background-color: var(--bg-color);
   margin: 0;
   padding: 0;
 }
 
-/************************ HEADER ************************/
+body {
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==========================================================================
+   HEADER AND NAVIGATION
+   ========================================================================== */
+
 header {
   display: grid;
-  grid-template-columns: 28px auto 44px; /* Logo, Title, Hamburger */
-  column-gap: 10px;
-  row-gap: 10px;
-  padding: 10px 16px;
+  grid-template-columns: auto auto 44px;
+  gap: 10px;
   align-items: center;
-  background-color: var(--header-bg);
-  border-bottom: solid 1px #9ca3af;
+  padding: 12px 16px;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  box-shadow: var(--box-shadow);
 }
 
 .site-branding {
-  grid-column: 1 / 3;
   display: flex;
+  grid-column: 1 / 3;
   align-items: center;
   gap: 10px;
 }
 
 .site-branding img {
   display: block;
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
 }
 
 .site-branding span {
-  font-size: 1rem;
+  color: var(--text-light);
+  font-size: 1.05rem;
   font-weight: 700;
   line-height: 1.2;
-  color: var(--text-dark);
 }
 
-/********************* HAMBURGER *********************/
-.hamburger {
+.header-controls {
+  display: flex;
   grid-column: 3;
+  align-items: center;
   justify-self: end;
+  gap: 4px;
+}
+
+.icon-btn,
+.hamburger {
+  padding: 4px;
+  border: 0;
   background: none;
-  border: none;
-  color: var(--text-dark);
+  color: var(--text-light);
   cursor: pointer;
-  padding: 0;
-  line-height: 1;
+  font-size: 1.4rem;
 }
 
 .hamburger::after {
   content: "\2630";
-  font-size: 1.8rem;
 }
 
 .hamburger.show::after {
-  content: "\00D7";
-  font-size: 2rem;
+  content: "\00d7";
+  font-size: 1.8rem;
 }
 
-/********************* NAVIGATION *********************/
 .navigation {
   display: none;
-  grid-column: 1 / -1; /* Spans full grid width on small screens */
-  background-color: var(--header-bg);
+  grid-column: 1 / -1;
+  margin-top: 8px;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-dark);
 }
 
 .navigation.show {
@@ -92,44 +132,131 @@ header {
 }
 
 .navigation ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+  list-style: none;
 }
 
 .navigation a {
   display: block;
-  padding: 10px 16px;
-  color: var(--text-dark);
-  text-decoration: none;
-  border-top: solid 1px #9ca3af;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgb(255 255 255 / 10%);
+  color: var(--text-light);
   text-align: center;
+  text-decoration: none;
 }
 
-.navigation li.current a {
-  background-color: var(--primary-color);
-  color: #ffffff;
-}
-
+.navigation li.current a,
 .navigation a:hover {
-  background-color: var(--secondary-color);
-  color: #ffffff;
+  background-color: var(--accent-teal);
 }
 
-/********************* MAIN CONTENT *********************/
+/* ==========================================================================
+   MAIN CONTENT
+   ========================================================================== */
+
 main {
-  padding: 16px;
   max-width: 480px;
   margin: 0 auto;
+  padding: 16px;
 }
 
 h1.title {
-  text-align: center;
+  margin: 10px 0 16px;
+  color: var(--primary-color);
   font-size: 1.6rem;
-  margin: 10px 0 16px 0;
+  text-align: center;
 }
 
-/* View Controls */
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+
+.hero-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 380px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  margin: 16px;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  background-color: rgb(10 49 97 / 88%);
+  color: var(--text-light);
+}
+
+.hero-content h2 {
+  margin-bottom: 8px;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+.action-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  background-color: var(--accent-teal);
+  color: var(--text-light);
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.action-btn:hover {
+  background-color: var(--accent-teal-hover);
+}
+
+/* ==========================================================================
+   WEATHER
+   ========================================================================== */
+
+.weather-card {
+  margin-bottom: 20px;
+  padding: 16px;
+  border-top: 4px solid var(--accent-amber);
+  border-radius: var(--border-radius);
+  background-color: var(--card-bg);
+  box-shadow: var(--box-shadow);
+}
+
+.weather-card h2 {
+  margin-bottom: 8px;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.weather-details figure {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* ==========================================================================
+   DIRECTORY AND SPOTLIGHTS
+   ========================================================================== */
+
 .view-controls {
   display: flex;
   justify-content: center;
@@ -139,105 +266,153 @@ h1.title {
 
 .view-controls button {
   padding: 8px 28px;
-  border: 1px solid #9ca3af;
-  background-color: #e5e7eb;
+  border: 1px solid #cbd5e1;
   border-radius: var(--border-radius);
+  background-color: #e2e8f0;
+  color: var(--text-dark);
+  cursor: pointer;
   font-size: 0.9rem;
   font-weight: 600;
-  cursor: pointer;
 }
 
 .view-controls button.active-view {
-  background-color: #9ca3af;
-  color: #111827;
+  background-color: var(--primary-color);
+  color: var(--text-light);
 }
 
-/********************* MEMBER CARDS (GRID VIEW) *********************/
-.cards-grid-view {
+.cards-grid-view,
+.spotlights {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.business-card {
-  background-color: var(--card-bg);
-  border-radius: var(--border-radius);
-  padding: 16px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e5e7eb;
-}
-
-.card-header {
-  text-align: center;
+.spotlights > h2 {
   margin-bottom: 12px;
+  color: var(--primary-color);
+  font-size: 1.4rem;
 }
 
-.card-header h2 {
+.business-card,
+.spotlight-card {
+  padding: 16px;
+  border-radius: var(--border-radius);
+  background-color: var(--card-bg);
+  box-shadow: var(--box-shadow);
+}
+
+.business-card {
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid var(--primary-color);
+}
+
+.spotlight-card {
+  border: 2px solid transparent;
+  transition: transform 0.2s ease-in-out;
+}
+
+.spotlight-card:hover {
+  transform: translateY(-3px);
+}
+
+.spotlight-card.gold-member {
+  border-color: #d4af37;
+  background: linear-gradient(135deg, #fff9e6, #ffe899);
+  color: #3d3100;
+}
+
+.spotlight-card.silver-member {
+  border-color: #adb5bd;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  color: #212529;
+}
+
+.card-header h2,
+.business-card h3 {
+  margin-bottom: 4px;
+  color: var(--primary-color);
   font-size: 1.2rem;
-  margin: 0 0 4px 0;
-  color: var(--text-dark);
 }
 
-.card-header .tagline {
-  font-size: 0.85rem;
+.card-header .tagline,
+.business-card .tagline {
+  margin-bottom: 8px;
   color: var(--text-muted);
-  margin: 0 0 8px 0;
+  font-size: 0.85rem;
 }
-
-/* Membership Badges */
-.badge {
-  display: inline-block;
-  padding: 2px 10px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  border-radius: 12px;
-  color: #ffffff;
-}
-
-.badge-level-3 { background-color: var(--gold-badge); }
-.badge-level-2 { background-color: var(--silver-badge); }
-.badge-level-1 { background-color: var(--member-badge); }
 
 .card-body {
   display: flex;
   align-items: center;
   gap: 16px;
+  margin-top: 8px;
 }
 
-.img-container {
-  width: 90px;
-  height: 80px;
-  background-color: #9ca3af;
-  flex-shrink: 0;
-  border-radius: 4px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.img-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
+.card-info,
 .card-details {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   line-height: 1.5;
 }
 
+.card-info p,
 .card-details p {
   margin: 3px 0;
-  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
+.card-info a,
 .card-details a {
-  color: var(--primary-color);
+  color: var(--accent-teal);
+  font-weight: 600;
   text-decoration: underline;
 }
 
-/********************* MEMBER CARDS (LIST VIEW) *********************/
+.img-container,
+.business-card img {
+  flex-shrink: 0;
+  width: 90px;
+  height: 80px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   BADGES
+   ========================================================================== */
+
+.badge,
+.membership {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background-color: var(--accent-amber);
+  color: var(--primary-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.badge-gold,
+.badge-level-3 {
+  background-color: var(--gold-badge);
+  color: var(--text-light);
+}
+
+.badge-silver,
+.badge-level-2 {
+  background-color: var(--silver-badge);
+  color: var(--text-light);
+}
+
+.badge-level-1 {
+  background-color: var(--member-badge);
+  color: var(--text-light);
+}
+
+/* ==========================================================================
+   LIST VIEW
+   ========================================================================== */
+
 .cards-list-view {
   display: flex;
   flex-direction: column;
@@ -249,8 +424,8 @@ h1.title {
 }
 
 .cards-list-view .card-header {
-  text-align: left;
   margin-bottom: 8px;
+  text-align: left;
 }
 
 .cards-list-view .card-body {
@@ -258,17 +433,22 @@ h1.title {
 }
 
 .cards-list-view .img-container {
-  display: none; /* Hide images in list mode */
+  display: none;
 }
 
-/********************* FOOTER *********************/
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
 footer {
-  background-color: var(--header-bg);
-  border-top: 1px solid #9ca3af;
-  padding: 20px 16px;
-  text-align: center;
+  margin-top: 24px;
+  padding: 24px 16px;
+  border-top: 3px solid var(--accent-teal);
+  background-color: var(--primary-dark);
+  color: var(--text-light);
   font-size: 0.85rem;
   line-height: 1.5;
+  text-align: center;
 }
 
 footer p {
@@ -283,12 +463,15 @@ footer p {
 }
 
 .socials img {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) invert(1);
 }
 
 .footer-meta {
   margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgb(255 255 255 / 10%);
+  color: #94a3b8;
   font-size: 0.8rem;
-  color: var(--text-muted);
 }

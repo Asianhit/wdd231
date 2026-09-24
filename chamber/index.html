@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calabar Chamber of Commerce</title>
+    
+    <!-- Meta Descriptions & Authorship -->
+    <meta name="author" content="Samuel Christian Asian">
+    <meta name="description" content="Discover local businesses, connect with entrepreneurs, and support economic growth through the Calabar Chamber of Commerce.">
+    
+    <!-- Open Graph / Social Media Meta -->
+    <meta property="og:title" content="Calabar Chamber of Commerce">
+    <meta property="og:description" content="Samuel Christian Asian Chamber of Commerce project for Calabar, Cross River State.">
+    <meta property="og:url" content="https://asianhit.github.io/wdd231/chamber/index.html">
+    <meta property="og:image" content="https://asianhit.github.io/wdd231/chamber/images/calabar-hero-image.webp">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon & Stylesheets -->
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/chamber-small.css">
+    <link rel="stylesheet" href="styles/chamber-large.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- JavaScript Modules -->
+    <script type="module" src="scripts/cham-home.mjs"></script>
+    <script type="module" src="scripts/chamber.mjs"></script>
+</head>
+<body>
+
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="site-branding">
+            <img src="images/chmaber-logo.webp" alt="Calabar Chamber of Commerce Logo" width="40" height="40">
+            <span>Calabar Chamber<br>of Commerce</span>
+        </div>
+        
+        <div class="header-controls">
+            <button id="theme-btn" class="icon-btn" aria-label="Toggle Theme" type="button">🌓</button>
+            <button id="ham-btn" class="hamburger" aria-label="Toggle navigation" type="button"></button>
+        </div>
+
+        <nav id="nav-bar" class="navigation" aria-label="Main navigation">
+            <ul>
+                <li class="current"><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <h1 class="visually-hidden">Calabar Chamber of Commerce Home</h1>
+
+        <!-- HERO SECTION -->
+        <section class="hero-container">
+            <img src="images/calabar-hero-image.webp" alt="Panoramic view of Calabar riverfront and city skyline" class="hero-image" width="1200" height="500">
+            <div class="hero-content">
+                <h2>Building a Thriving Calabar Economy</h2>
+                <p>Connecting local enterprise with opportunity and growth in Cross River State.</p>
+                <a href="join.html" class="action-btn" id="action">Make an Inquiry</a>
+            </div>
+        </section>
+
+        <!-- WEATHER WIDGET SECTION -->
+        <section class="weather-card">
+            <h2>Current Weather</h2>
+            <div class="weather-details">
+                <p>Location: <strong>Calabar, Cross River State</strong></p>
+                <p>Temperature: <span id="current-temp">--</span></p>
+                <figure>
+                    <img id="weather-icon" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50'%3E%3C/svg%3E" alt="Current weather condition icon" width="50" height="50">
+                    <figcaption id="weather-desc">Loading weather...</figcaption>
+                </figure>
+            </div>
+            <div class="forecast-details">
+                <h3>3-Day Forecast</h3>
+                <ul id="forecast-list" class="forecast-list">
+                    <!-- Dynamic 3-day forecast items insert here -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- BUSINESS SPOTLIGHTS CONTAINER -->
+        <section class="spotlights">
+            <h2>Member Spotlights</h2>
+            <div id="spotlight-cards" class="cards-grid-view">
+                <!-- Dynamically loaded Gold and Silver Member Spotlights -->
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-info">
+            <p><strong>Calabar Chamber of Commerce</strong></p>
+            <p>NO: 10, Duke Runway Avenue</p>
+            <p>Calabar, Cross River State, Nigeria</p>
+            <p>info@calabarchamber.org</p>
+            <p>+234-785-468-7001</p>
+        </div>
+
+        <div class="socials">
+            <a href="https://www.youtube.com/@MindFramePsychology-k1c" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel">
+                <img src="images/youtube-brands-solid.svg" alt="YouTube Icon" loading="lazy" width="20" height="20">
+            </a>
+            <a href="https://www.linkedin.com/in/samuel-asian-b71644352" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                <img src="images/linkedin-brands-solid.svg" alt="LinkedIn Icon" loading="lazy" width="20" height="20">
+            </a>
+            <a href="https://x.com/samuelasian?s=11" target="_blank" rel="noopener noreferrer" aria-label="X Profile">
+                <img src="images/x-twitter.svg" alt="X Icon" loading="lazy" width="20" height="20">
+            </a>
+        </div>
+
+        <div class="footer-meta">
+            <p>© <span id="currentYear"></span> || Samuel Christian Asian 🌺 || Cross River, Nigeria 🌲</p>
+            <p>Last Modified: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+
+</body>
+</html>
