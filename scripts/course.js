@@ -81,6 +81,7 @@ const courses = [
 // DOM Element References (matching the IDs in index.html)
 const courseContainer = document.querySelector('#course-cards');
 const totalCreditsElement = document.querySelector('#total-credits');
+const courseDetails = document.querySelector('#course-details');
 const allBtn = document.querySelector('#all-btn');
 const cseBtn = document.querySelector('#cse-btn');
 const wddBtn = document.querySelector('#wdd-btn');
@@ -92,8 +93,10 @@ function displayCourses(courseList) {
 
     // Dynamically generate an <h4> element for each course
     courseList.forEach(course => {
-        const card = document.createElement('h4');
+        const card = document.createElement('button');
+        card.type = 'button';
         card.textContent = `${course.subject} ${course.number}`;
+        card.addEventListener('click', () => displayCourseDetails(course));
 
         // Add completed class if true for color styling
         if (course.completed) {
@@ -133,3 +136,20 @@ wddBtn.addEventListener('click', () => {
 
 
 displayCourses(courses);
+
+function displayCourseDetails(course) {
+  courseDetails.innerHTML = `
+        <button id="closeModal" type="button" aria-label="Close course details">&times;</button>
+    <h2 id="course-details-title">${course.subject} ${course.number}</h2>
+    <h3>${course.title}</h3>
+    <p><strong>Credits</strong>: ${course.credits}</p>
+    <p><strong>Certificate</strong>: ${course.certificate}</p>
+    <p>${course.description}</p>
+    <p><strong>Technologies</strong>: ${course.technology.join(', ')}</p>
+  `;
+  courseDetails.showModal();
+
+    courseDetails.querySelector('#closeModal').addEventListener('click', () => {
+    courseDetails.close();
+  });
+}
