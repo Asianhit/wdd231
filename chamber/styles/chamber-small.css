@@ -475,3 +475,317 @@ footer p {
   color: #94a3b8;
   font-size: 0.8rem;
 }
+
+/* ==========================================================================
+   JOIN PAGE STYLES (MOBILE-FIRST)
+   ========================================================================== */
+
+.join-main {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.join-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.join-header h1 {
+    color: var(--primary-color, #004080);
+    margin-bottom: 0.5rem;
+}
+
+/* Form Container & Layout */
+.join-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.join-form {
+    background-color: var(--card-bg, #ffffff);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.join-form fieldset {
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.join-form legend {
+    font-weight: 700;
+    color: var(--primary-color, #004080);
+    padding: 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Form Fields & Inputs */
+.form-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+}
+
+.form-item label {
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+    color: #333333;
+}
+
+.form-item label span.required {
+    color: #d9534f;
+}
+
+.form-item input[type="text"],
+.form-item input[type="email"],
+.form-item input[type="tel"],
+.form-item select,
+.form-item textarea {
+    padding: 0.75rem;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* HTML5 Input Validation Styling */
+.form-item input:required:valid,
+.form-item textarea:required:valid {
+    border-left: 4px solid #2e7d32;
+}
+
+.form-item input:required:invalid:not(:placeholder-shown) {
+    border-left: 4px solid #d9534f;
+}
+
+.form-item input:focus,
+.form-item select:focus,
+.form-item textarea:focus {
+    outline: none;
+    border-color: var(--primary-color, #004080);
+    box-shadow: 0 0 0 3px rgba(0, 64, 128, 0.15);
+}
+
+.form-item textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 0.85rem;
+    background-color: var(--primary-color, #004080);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover {
+    background-color: #002b55;
+}
+
+.submit-btn:active {
+    transform: scale(0.99);
+}
+
+/* Membership Cards Section */
+.membership-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.membership-card {
+    background-color: var(--card-bg, #ffffff);
+    border: 1px solid #e0e0e0;
+    border-top: 5px solid var(--primary-color, #004080);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Accent borders per level */
+.membership-card.np { border-top-color: #6c757d; }
+.membership-card.bronze { border-top-color: #cd7f32; }
+.membership-card.silver { border-top-color: #c0c0c0; }
+.membership-card.gold { border-top-color: #ffd700; }
+
+.membership-card h3 {
+    margin-top: 0;
+    color: #222222;
+}
+
+.membership-card .price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color, #004080);
+    margin: 0.5rem 0 1rem 0;
+}
+
+.modal-btn {
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 2px solid var(--primary-color, #004080);
+    color: var(--primary-color, #004080);
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.modal-btn:hover {
+    background-color: var(--primary-color, #004080);
+    color: #ffffff;
+}
+
+/* Benefits Modal Window */
+dialog.benefits-modal {
+    padding: 1.5rem;
+    border: none;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    margin: auto;
+}
+
+dialog.benefits-modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+}
+
+dialog.benefits-modal h3 {
+    margin-top: 0;
+    color: var(--primary-color, #004080);
+}
+
+dialog.benefits-modal ul {
+    padding-left: 1.25rem;
+    margin: 1rem 0;
+}
+
+dialog.benefits-modal ul li {
+    margin-bottom: 0.5rem;
+}
+
+.close-modal-btn {
+    display: block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #d9534f;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   THANK YOU PAGE STYLES (MOBILE-FIRST)
+   ========================================================================== */
+
+.thankyou-main {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.thankyou-card {
+    background-color: var(--card-bg, #ffffff);
+    padding: 2rem 1.5rem;
+    border-radius: 8px;
+    border-top: 6px solid var(--primary-color, #004080);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.thankyou-card h1 {
+    color: var(--primary-color, #004080);
+    margin-bottom: 0.75rem;
+    font-size: 1.8rem;
+}
+
+.thankyou-card > p {
+    color: #555555;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+/* Summary Box & Grid */
+.summary-container {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 1.25rem;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.summary-container h2 {
+    color: #222222;
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+}
+
+.submitted-data {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin: 0;
+}
+
+.submitted-data dt {
+    font-weight: 700;
+    color: var(--primary-color, #004080);
+    margin-top: 0.5rem;
+}
+
+.submitted-data dd {
+    margin-left: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #cccccc;
+    color: #333333;
+    word-break: break-word;
+}
+
+/* Home Redirect Button */
+.home-btn {
+    display: inline-block;
+    background-color: var(--primary-color, #004080);
+    color: #ffffff !important;
+    text-decoration: none;
+    padding: 0.85rem 1.75rem;
+    border-radius: 6px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0, 64, 128, 0.25);
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.home-btn:hover {
+    background-color: #002b55;
+    box-shadow: 0 4px 10px rgba(0, 43, 85, 0.35);
+    transform: translateY(-2px);
+}
+
+.home-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 43, 85, 0.2);
+}

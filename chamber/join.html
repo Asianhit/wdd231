@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us - Calabar Chamber of Commerce</title>
+    
+    <!-- Meta Descriptions & Authorship -->
+    <meta name="author" content="Samuel Christian Asian">
+    <meta name="description" content="Apply for membership with the Calabar Chamber of Commerce to connect, grow, and empower your business.">
+    
+    <!-- Open Graph / Social Media Meta -->
+    <meta property="og:title" content="Join - Calabar Chamber of Commerce">
+    <meta property="og:description" content="Become a member of the Calabar Chamber of Commerce and gain access to networking, training, and spotlight benefits.">
+    <meta property="og:url" content="https://asianhit.github.io/wdd231/chamber/join.html">
+    <meta property="og:image" content="https://asianhit.github.io/wdd231/chamber/images/calabar-hero-image.webp">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon & Stylesheets -->
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/chamber-small.css">
+    <link rel="stylesheet" href="styles/chamber-large.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- JavaScript Modules -->
+    <script type="module" src="scripts/chamber.mjs"></script>
+    <script type="module" src="scripts/join.mjs"></script>
+</head>
+
+<body>
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="site-branding">
+            <img src="images/chmaber-logo.webp" alt="Calabar Chamber of Commerce Logo" width="40" height="40">
+            <span>Calabar Chamber<br>of Commerce</span>
+        </div>
+        
+        <div class="header-controls">
+            <button id="theme-btn" class="icon-btn" aria-label="Toggle Theme" type="button">🌓</button>
+            <button id="ham-btn" class="hamburger" aria-label="Toggle navigation" type="button"></button>
+        </div>
+
+        <nav id="nav-bar" class="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li class="current"><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="join-main">
+        <div class="join-header">
+            <h1 class="title">Chamber Membership Application</h1>
+            <p>Fill out the form below to initiate your membership application with the Calabar Chamber of Commerce.</p>
+        </div>
+
+        <div class="join-container">
+            <!-- APPLICATION FORM -->
+            <form class="join-form get-info" id="getInfo" method="get" action="thankyou.html">
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <div class="form-item">
+                        <label for="user-fname">First Name<span class="required">*</span></label>
+                        <input type="text" id="user-fname" name="fname" placeholder="Samuel" required title="Please enter your first name" autocomplete="given-name">
+                    </div>
+
+                    <div class="form-item">
+                        <label for="user-lname">Last Name<span class="required">*</span></label>
+                        <input type="text" id="user-lname" name="lname" placeholder="Asian" required title="Please enter your last name" autocomplete="family-name">
+                    </div>
+
+                    <div class="form-item">
+                        <label for="email">Email Address<span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="example@calabarchamber.org" required title="Please enter a valid email address" autocomplete="email">
+                    </div>
+
+                    <div class="form-item">
+                        <label for="phone-number">Mobile Phone Number<span class="required">*</span></label>
+                        <input type="tel" id="phone-number" name="phone-number" placeholder="+234-800-000-0000" required title="Please enter your mobile phone number" autocomplete="tel">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Business & Professional Details</legend>
+
+                    <div class="form-item">
+                        <label for="org-title">Organizational Title</label>
+                        <input type="text" id="org-title" name="org-title" placeholder="Managing Director" title="Must contain at least 7 letters, hyphens, or spaces" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}">
+                    </div>
+
+                    <div class="form-item">
+                        <label for="business-name">Business / Organization Name<span class="required">*</span></label>
+                        <input type="text" id="business-name" name="organization" placeholder="Calabar Tech Hub" required title="Please enter your business or organization name" autocomplete="organization">
+                    </div>
+
+                    <div class="form-item">
+                        <label for="membership-level">Membership Level<span class="required">*</span></label>
+                        <select id="membership-level" name="membership-level" required title="Select a membership level">
+                            <option value="" disabled selected>-- Select Membership Level --</option>
+                            <option value="np">NP Membership (Non-Profit - Free)</option>
+                            <option value="bronze">Bronze Membership</option>
+                            <option value="silver">Silver Membership</option>
+                            <option value="gold">Gold Membership</option>
+                        </select>
+                    </div>
+
+                    <div class="form-item">
+                        <label for="business-desc">Business / Organization Description</label>
+                        <textarea id="business-desc" name="business-desc" rows="4" placeholder="Briefly describe your business operations, services, or goals..." title="Provide a brief description of your business"></textarea>
+                    </div>
+
+                    <!-- Hidden Timestamp Field -->
+                    <input type="hidden" id="timestamp" name="timestamp">
+                </fieldset>
+
+                <input type="submit" value="Complete Membership Application" class="submit-btn">
+            </form>
+
+            <!-- MEMBERSHIP LEVEL CARDS -->
+            <section class="membership-cards" aria-label="Membership Levels and Benefits">
+                <article class="membership-card np">
+                    <h3>NP Membership</h3>
+                    <p class="price">Free for Non-Profits</p>
+                    <button type="button" class="modal-btn open-modal-btn" data-modal="modal-np">View NP Benefits</button>
+                </article>
+
+                <article class="membership-card bronze">
+                    <h3>Bronze Membership</h3>
+                    <p class="price">₦25,000 / Year</p>
+                    <button type="button" class="modal-btn open-modal-btn" data-modal="modal-bronze">View Bronze Benefits</button>
+                </article>
+
+                <article class="membership-card silver">
+                    <h3>Silver Membership</h3>
+                    <p class="price">₦60,000 / Year</p>
+                    <button type="button" class="modal-btn open-modal-btn" data-modal="modal-silver">View Silver Benefits</button>
+                </article>
+
+                <article class="membership-card gold">
+                    <h3>Gold Membership</h3>
+                    <p class="price">₦120,000 / Year</p>
+                    <button type="button" class="modal-btn open-modal-btn" data-modal="modal-gold">View Gold Benefits</button>
+                </article>
+            </section>
+        </div>
+
+        <!-- HTML MODALS FOR BENEFITS -->
+        <dialog id="modal-np" class="benefits-modal">
+            <div class="modal-content">
+                <button type="button" class="close-modal-btn" aria-label="Close modal">❌</button>
+                <h3>Non-Profit (NP) Membership Benefits</h3>
+                <ul>
+                    <li>Free annual membership for registered non-profits</li>
+                    <li>Listing in the public online Chamber Directory</li>
+                    <li>Access to general networking events</li>
+                    <li>Invitation to community development workshops</li>
+                </ul>
+            </div>
+        </dialog>
+
+        <dialog id="modal-bronze" class="benefits-modal">
+            <div class="modal-content">
+                <button type="button" class="close-modal-btn" aria-label="Close modal">❌</button>
+                <h3>Bronze Membership Benefits</h3>
+                <ul>
+                    <li>Includes all NP level benefits</li>
+                    <li>Discounted entry to Chamber seminars & training programs</li>
+                    <li>Standard business profile in the member directory</li>
+                    <li>Quarterly business newsletter features</li>
+                </ul>
+            </div>
+        </dialog>
+
+        <dialog id="modal-silver" class="benefits-modal">
+            <div class="modal-content">
+                <button type="button" class="close-modal-btn" aria-label="Close modal">❌</button>
+                <h3>Silver Membership Benefits</h3>
+                <ul>
+                    <li>Includes all Bronze level benefits</li>
+                    <li>Eligibility for Home Page Member Spotlight placement</li>
+                    <li>15% discount on event sponsorships and booth spaces</li>
+                    <li>Access to exclusive B2B networking luncheons</li>
+                </ul>
+            </div>
+        </dialog>
+
+        <dialog id="modal-gold" class="benefits-modal">
+            <div class="modal-content">
+                <button type="button" class="close-modal-btn" aria-label="Close modal">❌</button>
+                <h3>Gold Membership Benefits</h3>
+                <ul>
+                    <li>Includes all Silver level benefits</li>
+                    <li>Priority placement in Home Page Spotlight & Directory listings</li>
+                    <li>Free access to all annual Chamber training courses</li>
+                    <li>Dedicated promotional banner on Chamber digital media</li>
+                    <li>VIP seating at state economic summits</li>
+                </ul>
+            </div>
+        </dialog>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-info">
+            <p><strong>Calabar Chamber of Commerce</strong></p>
+            <p>NO: 10, Duke Runway Avenue</p>
+            <p>Calabar, Cross River State, Nigeria</p>
+            <p>info@calabarchamber.org</p>
+            <p>+234-785-468-7001</p>
+        </div>
+
+        <div class="socials">
+            <a href="https://www.youtube.com/@MindFramePsychology-k1c" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel">
+                <img src="images/youtube-brands-solid.svg" alt="YouTube Icon" loading="lazy" width="20" height="20">
+            </a>
+            <a href="https://www.linkedin.com/in/samuel-asian-b71644352" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                <img src="images/linkedin-brands-solid.svg" alt="LinkedIn Icon" loading="lazy" width="20" height="20">
+            </a>
+            <a href="https://x.com/samuelasian?s=11" target="_blank" rel="noopener noreferrer" aria-label="X Profile">
+                <img src="images/x-twitter.svg" alt="X Icon" loading="lazy" width="20" height="20">
+            </a>
+        </div>
+
+        <div class="footer-meta">
+            <p>© <span id="currentYear"></span> || Samuel Christian Asian 🌺 || Cross River, Nigeria 🌲</p>
+            <p>Last Modified: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+</body>
+</html>
