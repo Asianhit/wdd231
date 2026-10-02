@@ -1,0 +1,244 @@
+/* ==========================================================================
+   ApexMart Site Plan - CSS Stylesheet
+   Color Palette:
+   - Primary Navy: #0f172a
+   - Accent Royal Blue: #2563eb
+   - Neutral BG: #f8fafc
+   - Card Surface: #ffffff
+   - Text Slate: #334155
+   ========================================================================== */
+
+/* --- CSS Reset & CSS Variables --- */
+:root {
+  --primary-navy: #0f172a;
+  --accent-blue: #2563eb;
+  --neutral-bg: #f8fafc;
+  --card-surface: #ffffff;
+  --text-slate: #334155;
+  --border-color: #e2e8f0;
+  
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  background-color: var(--neutral-bg);
+  color: var(--text-slate);
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+}
+
+/* --- Header Section --- */
+header {
+  background-color: var(--primary-navy);
+  color: #ffffff;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+header img {
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+header h1 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: -0.5px;
+}
+
+/* --- Main Layout & Sections --- */
+main {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+section {
+  background-color: var(--card-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* --- Headings --- */
+h2 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--primary-navy);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--accent-blue);
+  display: inline-block;
+  padding-bottom: 0.25rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Lists (Color Scheme & Typography) --- */
+ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+li::before {
+  content: "•";
+  color: var(--accent-blue);
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+li strong {
+  color: var(--primary-navy);
+  font-family: var(--font-heading);
+}
+
+/* --- Scenario Buttons & Interactive Dialogs --- */
+.scenarios {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.scenario-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.scenario-btn {
+  background-color: var(--neutral-bg);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-blue);
+  border-radius: 6px;
+  padding: 1rem;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.scenario-btn:hover {
+  background-color: #f1f5f9;
+  transform: translateY(-1px);
+}
+
+.scenario-btn span {
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--primary-navy);
+  font-size: 0.95rem;
+}
+
+dialog {
+  margin: 1rem 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--accent-blue);
+  border-radius: 8px;
+  background-color: #eff6ff;
+  color: var(--primary-navy);
+  position: relative;
+}
+
+dialog button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  float: right;
+  font-size: 0.9rem;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: var(--primary-navy);
+  color: #cbd5e1;
+  padding: 2rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.socials {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.08);
+  transition: background-color 0.2s ease;
+}
+
+.socials a:hover {
+  background-color: var(--accent-blue);
+}
+
+.socials img {
+  filter: invert(1);
+}
+
+.footer-meta p {
+  margin-bottom: 0.3rem;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  main {
+    padding: 0 1rem;
+  }
+  
+  section {
+    padding: 1.25rem 1.25rem;
+  }
+}
