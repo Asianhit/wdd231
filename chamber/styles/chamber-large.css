@@ -1,4 +1,4 @@
-@media screen and (min-width: 60rem) {
+@media screen and (min-width: 32rem) {
 
   /************************ HEADER ************************/
   header {
@@ -244,6 +244,14 @@
   .title {
     font-size: 2.25rem;
     margin: 2rem 0;
+  }
+  .location-card img {
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .location-card:hover img {
+    transform: scale(1.04);
+    filter: brightness(1.08);
   }
 
 }
