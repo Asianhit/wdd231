@@ -230,4 +230,20 @@
     .submitted-data dd {
         padding-bottom: 0.25rem;
     }
+
+
+    /* ==========================================================================
+   DISCOVERY PAGE STYLES (LARGE SCREENS)
+   ========================================================================== */
+  #locations-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 Columns on Tablet */
+    gap: 1.75rem;
+    padding: 0 1.5rem 2.5rem 1.5rem;
+  }
+
+  .title {
+    font-size: 2.25rem;
+    margin: 2rem 0;
+  }
+
 }

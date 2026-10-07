@@ -1,0 +1,20 @@
+
+/* ==========================================================================
+   LARGE / DESKTOP SCREENS (1024px and up)
+   ========================================================================== */
+
+@media screen and (min-width: 1024px) {
+  #locations-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 Columns on Desktop */
+    gap: 2rem;
+    padding: 0 2rem 3rem 2rem;
+  }
+
+  .location-card img {
+    height: 220px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+}
