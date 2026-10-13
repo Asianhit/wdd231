@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexMart — Blog & Custom Product Requests</title>
+    <meta name="author" content="Samuel Christian Asian">
+    <meta name="description" content="Read lifestyle articles on technology and fashion, and request custom or out-of-stock items directly from ApexMart.">
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="ApexMart Blog & Custom Requests">
+    <meta property="og:description" content="Explore articles on tech & fashion lifestyle, and request items you can't find in our store.">
+    <meta property="og:image" content="images/apexmart-hero.webp">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="blog.html">
+    
+    <!-- Stylesheets & Fonts -->
+    <link rel="stylesheet" href="styles/apexmart-small.css">
+    <link rel="stylesheet" href="styles/apexmart-large.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="../apexmart/images/apexmar-favicon.ico">
+
+    <!-- ES Modules -->
+    <script type="module" src="scripts/apexmart.mjs"></script>
+    <script type="module" src="scripts/time-date.mjs"></script>
+</head>
+<body>
+
+    <!-- Header Navigation Section (Wayfinding active on Blog) -->
+    <header>
+        <div class="site-branding" id="site-branding">
+            <img src="images/apexmart-logo.webp" alt="ApexMart Logo" loading="eager" width="45" height="45">
+            <span>ApexMart <br>Digital & Fashion</span>
+        </div>
+
+        <div class="header-controls">
+            <!-- Theme Toggle -->
+            <button id="theme-btn" class="icon-btn" aria-label="Toggle Theme" type="button">🌓</button>
+            <!-- Cart Trigger Button -->
+            <button id="cart-btn" class="icon-btn" aria-label="Open Cart" type="button">🛒 <span id="cart-count">0</span></button>
+            <!-- Hamburger Toggle -->
+            <button id="ham-btn" class="hamburger" aria-label="Toggle navigation" type="button">☰</button>
+        </div>
+
+        <nav class="navigation" id="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li class="current"><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="blog-main-container">
+        <!-- Main Blog Articles Section -->
+        <section class="blog-articles-section">
+            <div class="blog-header">
+                <h1>ApexMart Journal</h1>
+                <p>Insights on blending cutting-edge tech with modern everyday fashion.</p>
+            </div>
+
+            <div class="articles-grid">
+                <!-- Article 1 -->
+                <article class="blog-card">
+                    <div class="blog-img-wrapper">
+                        <img src="images/smart-watch1.webp" alt="Wearable Tech and Smart Devices" loading="lazy">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-category">Tech Guide</span>
+                        <h2>5 Smart Gadgets That Complement Your Daily Style</h2>
+                        <p class="blog-date">Published: October 2026</p>
+                        <p>Discover how modern smartwatches, wireless audio gear, and sleek portable chargers enhance your daily productivity without sacrificing your fashion aesthetic.</p>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="blog-card">
+                    <div class="blog-img-wrapper">
+                        <img src="images/hoodie-set2.webp" alt="Modern Minimalist Fashion Outfits" loading="lazy">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-category">Fashion Trends</span>
+                        <h2>Minimalist Wardrobe Essentials for the Tech Professional</h2>
+                        <p class="blog-date">Published: September 2026</p>
+                        <p>Building a modern wardrobe doesn't require clutter. Learn how versatile jackets, ergonomic footwear, and structured everyday bags streamline your daily workflow.</p>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="blog-card">
+                    <div class="blog-img-wrapper">
+                        <img src="images/powerbank.webp" alt="Everyday Carry Lifestyle Accessories" loading="lazy">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-category">Lifestyle Tips</span>
+                        <h2>How to Maintain and Protect Your Audio Gear & Leather Goods</h2>
+                        <p class="blog-date">Published: August 2026</p>
+                        <p>Prolong the lifespan of your premium headphones, wireless earbuds, leather organizers, and water-resistant backpacks with simple care routines.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Custom Item Request Form Section -->
+        <section class="item-request-section">
+            <div class="form-intro">
+                <h2>Can't Find What You're Looking For?</h2>
+                <p>Request special items, custom gadget colors, or out-of-stock fashion sizes directly from our sourcing team.</p>
+            </div>
+
+            <!-- Standard Compliant HTML Form submitting to form-response.html -->
+            <form action="thankyou.html" method="get" class="custom-request-form">
+                
+                <!-- Fieldset 1: Customer Contact Details -->
+                <fieldset>
+                    <legend>Contact Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="full-name">Full Name <span class="required">*</span></label>
+                        <input type="text" id="full-name" name="fullName" required placeholder="e.g. Samuel Asian" autocomplete="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email-address">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email-address" name="email" required placeholder="name@example.com" autocomplete="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone-number">Phone Number</label>
+                        <input type="tel" id="phone-number" name="phone" placeholder="+234 800 000 0000" autocomplete="tel">
+                    </div>
+                </fieldset>
+
+                <!-- Fieldset 2: Requested Item Specification -->
+                <fieldset>
+                    <legend>Item Details</legend>
+
+                    <div class="form-group">
+                        <label for="item-category">Product Category <span class="required">*</span></label>
+                        <select id="item-category" name="category" required>
+                            <option value="" disabled selected>Select a category</option>
+                            <option value="Gadgets & Audio">Gadgets & Audio</option>
+                            <option value="Fashion & Apparel">Fashion & Apparel</option>
+                            <option value="Lifestyle Accessories">Lifestyle Accessories</option>
+                            <option value="Other">Other Custom Request</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="item-name">Requested Product Name / Brand <span class="required">*</span></label>
+                        <input type="text" id="item-name" name="itemName" required placeholder="e.g. Noise-Canceling Overhead Headphones (Silver)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="estimated-budget">Target Budget Range</label>
+                        <select id="estimated-budget" name="budget">
+                            <option value="Under $50">Under $50</option>
+                            <option value="$50 - $150" selected>$50 - $150</option>
+                            <option value="$150 - $300">$150 - $300</option>
+                            <option value="$300+">$300+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="item-description">Detailed Description & Specifications <span class="required">*</span></label>
+                        <textarea id="item-description" name="description" rows="5" required placeholder="Describe desired color, size, model, material, or link to reference image..."></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-request-btn">Send Item Request</button>
+            </form>
+        </section>
+
+        <!-- Shopping Cart Modal / Drawer -->
+        <dialog id="cart-modal" class="modal" aria-labelledby="cart-title">
+            <div class="modal-content">
+            <button type="button" id="close-cart-btn" class="close-modal-btn" aria-label="Close shopping cart">❌</button>
+            <h2 id="cart-title">Your Shopping Cart</h2>
+                <div id="cart-items-container">
+                    <!-- JS renders items from localStorage here -->
+                </div>
+                <div class="cart-footer">
+                    <p>Total: <strong id="cart-total">$0.00</strong></p>
+                    <button type="button" class="checkout-btn">Proceed to Checkout</button>
+                </div>
+            </div>
+        </dialog>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-info">
+            <p><strong>ApexMart</strong></p>
+            <p>NO: 10, Duke Runway Avenue</p>
+            <p>Calabar, Cross River State, Nigeria</p>
+            <p>apexmart@shopping.org</p>
+            <p>+234-785-468-7001</p>
+        </div>
+
+        <div class="socials">
+            <a href="https://instagram.com/22nd_liq?exln=MW00cjFhZWFlYWs5ag%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
+                <img src="images/instagram-brands-solid.svg" alt="Instagram Icon" loading="lazy" width="20" height="20">
+            </a>
+            <a href="https://www.linkedin.com/in/samuel-asian-b71644352" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                <img src="images/linkedin-brands-solid.svg" alt="LinkedIn Icon" loading="lazy" width="20" height="20">
+            </a>
+            <a href="https://www.facebook.com/share/1NMB2LXXo8/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile">
+                <img src="images/facebook-brands-solid.svg" alt="Facebook Icon" loading="lazy" width="20" height="20">
+            </a>
+        </div>
+
+        <div class="footer-meta">
+            <p>© <span id="currentYear"></span> || Samuel Christian Asian 🌺 || Cross River, Nigeria 🌲</p>
+            <p>Last Modified: <span id="lastModified"></span></p>
+            <!-- <p><a href="attributions.html" class="attribution-link">Attributions</a></p> -->
+        </div>
+    </footer>
+
+</body>
+</html>

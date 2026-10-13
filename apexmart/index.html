@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexMart — Style & Tech Essentials</title>
+    <meta name="author" content="Samuel Christian Asian">
+    <meta name="description" content="Enjoy the fullness of life and accessories. At ApexMart, we bring digital products and fashion together to embody lifestyle.">
+    
+    <!-- Open Graph Meta Tags (Fixed og:description case sensitivity) -->
+    <meta property="og:title" content="ApexMart — Style & Tech Essentials">
+    <meta property="og:description" content="We bring digital world and fashion together, creating lifestyle that meets personality and branding.">
+    <meta property="og:image" content="images/apexmart-hero.webp">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="index.html">
+    
+    <!-- Stylesheets & Fonts -->
+    <link rel="stylesheet" href="styles/apexmart-small.css">
+    <link rel="stylesheet" href="styles/apexmart-large.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="../apexmart/images/apexmar-favicon.ico">
+
+    <!-- ES Modules -->
+    <script type="module" src="scripts/apexmart.mjs"></script>
+    <script type="module" src="scripts/time-date.mjs"></script>
+    <script type="module" src="scripts/weather.mjs"></script>
+</head>
+<body>
+
+    <!-- Header Navigation Section -->
+    <header>
+        <div class="site-branding" id="site-branding">
+            <img src="images/apexmart-logo.webp" alt="ApexMart Logo" loading="eager" width="45" height="45">
+            <span>ApexMart <br>Digital & Fashion</span>
+        </div>
+
+        <div class="header-controls">
+            <button id="theme-btn" class="icon-btn" aria-label="Toggle Theme" type="button">🌓</button>
+            <button id="cart-btn" class="icon-btn" aria-label="Open Cart" type="button">🛒 <span id="cart-count">0</span></button>
+            <button id="ham-btn" class="hamburger" aria-label="Toggle navigation" type="button">☰</button>
+        </div>
+
+        <nav class="navigation" id="navigation" aria-label="Main navigation">
+            <ul>
+                <li class="current"><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-side">
+            <div class="hero-content">
+                <h1>Discover Your Peak Style & Tech</h1>
+                <p>Comfort and customer satisfaction is our top priority.</p>
+                <a href="shop.html" class="hero-btn">Shop Here</a>
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="images/apexmart-hero.webp" alt="Featured Tech and Fashion Banner" loading="eager">
+            </div>
+        </section>
+
+                <!-- Weather widget displays Calabar current conditions and a three-day forecast. -->
+        <section class="weather-card">
+            <h2>Current Weather</h2>
+            <div class="weather-details">
+                <p>Location: <strong>Calabar, Cross River State</strong></p>
+                <p>Temperature: <span id="current-temp">--</span></p>
+                <figure>
+                    <img id="weather-icon" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50'%3E%3C/svg%3E" alt="Current weather condition icon" width="50" height="50">
+                    <figcaption id="weather-desc">Loading weather...</figcaption>
+                </figure>
+            </div>
+            <div class="forecast-details">
+                <h3>3-Day Forecast</h3>
+                <ul id="forecast-list" class="forecast-list">
+                    <!-- Dynamic 3-day forecast items insert here -->
+                </ul>
+            </div>
+            <p id="weather-error" role="status" aria-live="polite"></p>
+        </section>
+
+        <!-- Featured categories introduce the store's electronics, fashion, and lifestyle ranges. -->
+        <section class="feature-categories">
+            <h2>Feature Categories</h2>
+            <div class="category-grid">
+                <article class="category-card">
+                    <img src="images/smart-watch1.webp" alt="Smartwatch displaying its screen" loading="lazy">
+                    <h3>Electronics</h3>
+                    <p>Everyday tech for work, travel, and staying connected.</p>
+                    <button type="button" class="view-btn" data-open-category="electronics" aria-haspopup="dialog" aria-controls="electronics-dialog">Explore Electronics</button>
+                </article>
+                <article class="category-card">
+                    <img src="images/hoodie-set1.webp" alt="ApexMart casual fashion collection" loading="lazy">
+                    <h3>Fashion</h3>
+                    <p>Comfortable wardrobe staples, footwear, and accessories.</p>
+                    <button type="button" class="view-btn" data-open-category="fashion" aria-haspopup="dialog" aria-controls="fashion-dialog">Explore Fashion</button>
+                </article>
+                <article class="category-card">
+                    <img src="images/desk-lamp.webp" alt="Modern LED desk lamp for a home workspace" loading="lazy">
+                    <h3>Lifestyle</h3>
+                    <p>Useful home and personal picks that make daily routines easier.</p>
+                    <button type="button" class="view-btn" data-open-category="lifestyle" aria-haspopup="dialog" aria-controls="lifestyle-dialog">Explore Lifestyle</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- Each category has its own accessible native modal dialog. -->
+        <dialog id="electronics-dialog" class="modal" aria-labelledby="electronics-dialog-title">
+            <div class="modal-content">
+                <button type="button" class="close-modal-btn" data-close-dialog aria-label="Close Electronics details">&times;</button>
+                <h2 id="electronics-dialog-title">Electronics</h2>
+                <img class="category-dialog-image" src="images/smart-watch1.webp" alt="Nova smartwatch from the electronics collection" loading="lazy">
+                <p>Explore smart devices and practical tech accessories, including smartwatches, wireless audio, keyboards, portable power, and lighting for your workspace.</p>
+                <a class="hero-btn" href="shop.html">Browse the Shop</a>
+            </div>
+        </dialog>
+        <dialog id="fashion-dialog" class="modal" aria-labelledby="fashion-dialog-title">
+            <div class="modal-content">
+                <button type="button" class="close-modal-btn" data-close-dialog aria-label="Close Fashion details">&times;</button>
+                <h2 id="fashion-dialog-title">Fashion</h2>
+                <img class="category-dialog-image" src="images/hoodie-set1.webp" alt="Urban hoodie from the fashion collection" loading="lazy">
+                <p>Find versatile clothing and accessories for everyday wear, from relaxed hoodies and chinos to dresses, sneakers, and crossbody bags.</p>
+                <a class="hero-btn" href="shop.html">Browse the Shop</a>
+            </div>
+        </dialog>
+        <dialog id="lifestyle-dialog" class="modal" aria-labelledby="lifestyle-dialog-title">
+            <div class="modal-content">
+                <button type="button" class="close-modal-btn" data-close-dialog aria-label="Close Lifestyle details">&times;</button>
+                <h2 id="lifestyle-dialog-title">Lifestyle</h2>
+                <img class="category-dialog-image" src="images/desk-lamp.webp" alt="LED desk lamp from the lifestyle collection" loading="lazy">
+                <p>Shop thoughtful everyday essentials for your workspace, home, and personal routines, selected to bring convenience and character to daily life.</p>
+                <a class="hero-btn" href="shop.html">Browse the Shop</a>
+            </div>
+        </dialog>
+
+        <!-- Product Showcase (Dynamic Grid updated via data.mjs) -->
+        <section class="product-showcase">
+            <h2>Product Showcase</h2>
+            <div id="products-container" class="product-grid">
+                <!-- JavaScript fetches products.json and injects items here dynamically -->
+            </div>
+        </section>
+
+        <!-- Product Details Modal Dialog -->
+        <dialog id="product-modal" class="modal" aria-label="Product details">
+            <div class="modal-content" id="modal-content">
+                <!-- JS dynamically injects image gallery, colors, specs, and close button here -->
+            </div>
+        </dialog>
+
+        <!-- Shopping Cart Modal / Drawer -->
+        <dialog id="cart-modal" class="modal" aria-labelledby="cart-title">
+            <div class="modal-content">
+            <button type="button" id="close-cart-btn" class="close-modal-btn" aria-label="Close shopping cart">❌</button>
+            <h2 id="cart-title">Your Shopping Cart</h2>
+                <div id="cart-items-container">
+                    <!-- JS renders selected items from localStorage here -->
+                </div>
+                <div class="cart-footer">
+                    <p>Total: <strong id="cart-total">$0.00</strong></p>
+                    <button type="button" class="checkout-btn">Proceed to Checkout</button>
+                </div>
+            </div>
+        </dialog>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-info">
+            <p><strong>ApexMart</strong></p>
+            <p>NO: 10, Duke Runway Avenue</p>
+            <p>Calabar, Cross River State, Nigeria</p>
+            <p>apexmart@shopping.org</p>
+            <p>+234-785-468-7001</p>
+        </div>
+
+        <div class="socials">
+            <a href="https://instagram.com/22nd_liq?exln=MW00cjFhZWFlYWs5ag%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
+                <img src="images/instagram-brands-solid.svg" alt="Instagram Icon" loading="lazy" width="20" height="20">
+            </a>
+            <a href="https://www.linkedin.com/in/samuel-asian-b71644352" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                <img src="images/linkedin-brands-solid.svg" alt="LinkedIn Icon" loading="lazy" width="20" height="20">
+            </a>
+            <a href="https://www.facebook.com/share/1NMB2LXXo8/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile">
+                <img src="images/facebook-brands-solid.svg" alt="Facebook Icon" loading="lazy" width="20" height="20">
+            </a>
+        </div>
+
+        <div class="footer-meta">
+            <p>© <span id="currentYear"></span> || Samuel Christian Asian 🌺 || Cross River, Nigeria 🌲</p>
+            <p>Last Modified: <span id="lastModified"></span></p>
+            <!-- <p><a href="attributions.html" class="attribution-link">Attributions</a></p> -->
+        </div>
+    </footer>
+
+</body>
+</html>

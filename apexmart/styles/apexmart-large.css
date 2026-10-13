@@ -1,0 +1,185 @@
+/* ==========================================================================
+   ApexMart E-Commerce - Desktop & Large Screen Enhancements
+   Author: Samuel Christian Asian
+   Target Viewport: min-width 700px and above
+   ========================================================================== */
+
+@media (min-width: 700px) {
+
+  /* --- Navigation Header --- */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    flex-wrap: nowrap;
+  }
+
+  .hamburger {
+    display: none !important; /* Hide hamburger toggle on desktop */
+  }
+
+  .navigation {
+    display: block !important; /* Force navigation menu display */
+    width: auto;
+    background: none;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .navigation ul {
+    display: flex !important;
+    flex-direction: row;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  .navigation a {
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+  }
+
+  /* --- Main Container Whitespace --- */
+  main {
+    margin: 3rem auto;
+    padding: 0 2rem;
+    gap: 4rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  /* --- Home Page: Hero Split Layout --- */
+  .hero-side {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3rem;
+    gap: 2.5rem;
+  }
+
+  .hero-content {
+    flex: 1;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-image-wrapper {
+    flex: 1;
+    min-height: 280px;
+  }
+
+  /* --- Weather Section --- */
+  .weather-card {
+    margin-bottom: 20px;
+    padding: 16px;
+    border-top: 4px solid #f59e0b;
+    border-radius: 10px;
+    background-color: var(--card-surface, #ffffff);
+    box-shadow: var(--shadow-sm, 0 1px 3px rgba(15, 23, 42, 0.08));
+  }
+
+  .weather-card h2 {
+    margin-bottom: 8px;
+    color: var(--primary-navy, #0f172a);
+    font-size: 1.2rem;
+  }
+
+  .weather-details figure {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .forecast-list {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  /* --- Feature Categories Grid (3 Columns on Desktop) --- */
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
+
+  .category-card img {
+    height: 160px;
+  }
+
+  /* --- Product Showcase Grid (3 Columns on Desktop) --- */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
+
+  .product-img-wrapper {
+    aspect-ratio: 16 / 10;
+  }
+
+  .card-buttons, .card-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  /* --- Shop Page Filters & Search Controls --- */
+  .filter-search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .search-form {
+    max-width: 450px;
+    flex: 1;
+  }
+
+  /* --- Blog Articles Grid (3 Columns on Desktop) --- */
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
+
+  /* --- Form Layout Options --- */
+  .custom-request-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .submit-request-btn {
+    grid-column: 1 / -1;
+    max-width: 300px;
+    margin-left: auto;
+  }
+
+  .params-list li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /* --- Footer Layout --- */
+  footer {
+    padding: 3rem 2rem;
+  }
+
+  .footer-info {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .footer-info p {
+    margin-bottom: 0;
+  }
+}

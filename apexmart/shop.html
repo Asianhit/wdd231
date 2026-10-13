@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexMart — Shop Catalog</title>
+    <meta name="author" content="Samuel Christian Asian">
+    <meta name="description" content="Browse and search the full ApexMart catalog of digital tech gadgets, fashion, and lifestyle essentials.">
+    <meta property="og:title" content="ApexMart — Shop Catalog">
+    <meta property="og:description" content="Explore our complete collection of gadgets, fashion, and lifestyle products. Fast search, easy filtering, and quick checkout.">
+    <meta property="og:image" content="images/apexmart-hero.webp">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="shop.html">
+
+    <link rel="stylesheet" href="styles/apexmart-small.css">
+    <link rel="stylesheet" href="styles/apexmart-large.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/apexmar-favicon.ico">
+
+    <script type="module" src="scripts/apexmart.mjs"></script>
+    <script type="module" src="scripts/time-date.mjs"></script>
+    <script type="module" src="scripts/weather.mjs"></script>
+</head>
+<body>
+    <header>
+        <div class="site-branding" id="site-branding">
+            <img src="images/apexmart-logo.webp" alt="ApexMart Logo" loading="eager" width="45" height="45">
+            <span>ApexMart<br>Digital &amp; Fashion</span>
+        </div>
+
+        <div class="header-controls">
+            <button id="theme-btn" class="icon-btn" aria-label="Toggle Theme" type="button">🌓</button>
+            <button id="cart-btn" class="icon-btn" aria-label="Open Cart" type="button">🛒 <span id="cart-count">0</span></button>
+            <button id="ham-btn" class="hamburger" aria-label="Toggle navigation" type="button">☰</button>
+        </div>
+
+        <nav class="navigation" id="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="current"><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="shop-controls-section">
+            <div class="shop-header">
+                <h1>Shop Catalog</h1>
+                <p>Explore high-quality tech gadgets and fashion essentials.</p>
+            </div>
+
+            <div class="filter-search-container">
+                <form class="search-form" id="search-form" role="search" onsubmit="return false;">
+                    <label for="search-input" class="visually-hidden">Search products</label>
+                    <input
+                        type="search"
+                        id="search-input"
+                        placeholder="Search gadgets, apparel, accessories..."
+                        aria-label="Search items in store"
+                        autocomplete="off">
+                    <button type="button" id="clear-search-btn" aria-label="Clear Search">❌</button>
+                </form>
+
+                <div class="category-filters" id="category-filters">
+                    <button type="button" class="filter-pill active" data-category="all">All Items</button>
+                    <button type="button" class="filter-pill" data-category="gadgets" aria-pressed="false">Gadgets</button>
+                    <button type="button" class="filter-pill" data-category="fashion" aria-pressed="false">Fashion</button>
+                    <button type="button" class="filter-pill" data-category="branding" aria-pressed="false">Branding</button>
+                    <button type="button" class="filter-pill" data-category="lifestyle" aria-pressed="false">Lifestyle</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="shop-catalog-section">
+            <div class="catalog-status">
+                <p id="search-status-text" role="status" aria-live="polite">Loading products...</p>
+            </div>
+
+            <div id="shop-products-container" class="product-grid"></div>
+        </section>
+
+        <dialog id="product-modal" class="modal" aria-label="Product details">
+            <div class="modal-content" id="modal-content"></div>
+        </dialog>
+
+        <dialog id="cart-modal" class="modal" aria-labelledby="cart-title">
+            <div class="modal-content">
+            <button type="button" id="close-cart-btn" class="close-modal-btn" aria-label="Close shopping cart">❌</button>
+            <h2 id="cart-title">Your Shopping Cart</h2>
+                <div id="cart-items-container"></div>
+                <div class="cart-footer">
+                    <p>Total: <strong id="cart-total">$0.00</strong></p>
+                    <button type="button" class="checkout-btn">Proceed to Checkout</button>
+                </div>
+            </div>
+        </dialog>
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <p><strong>ApexMart</strong></p>
+            <p>NO: 10, Duke Runway Avenue</p>
+            <p>Calabar, Cross River State, Nigeria</p>
+            <p>apexmart@shopping.org</p>
+            <p>+234-785-468-7001</p>
+        </div>
+
+        <div class="socials">
+            <a href="https://instagram.com/22nd_liq?exln=MW00cjFhZWFlYWs5ag%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
+                <img src="images/instagram-brands-solid.svg" alt="Instagram Icon" loading="lazy" width="20" height="20">
+            </a>
+            <a href="https://www.linkedin.com/in/samuel-asian-b71644352" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                <img src="images/linkedin-brands-solid.svg" alt="LinkedIn Icon" loading="lazy" width="20" height="20">
+            </a>
+            <a href="https://www.facebook.com/share/1NMB2LXXo8/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile">
+                <img src="images/facebook-brands-solid.svg" alt="Facebook Icon" loading="lazy" width="20" height="20">
+            </a>
+        </div>
+
+        <div class="footer-meta">
+            <p>© <span id="currentYear"></span> || Samuel Christian Asian 🌺 || Cross River, Nigeria 🌲</p>
+            <p>Last Modified: <span id="lastModified"></span></p>
+            <!-- <p><a href="attributions.html" class="attribution-link">Attributions</a></p> -->
+        </div>
+    </footer>
+</body>
+</html>

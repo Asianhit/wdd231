@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexMart — Request Received</title>
+    <meta name="author" content="Samuel Christian Asian">
+    <meta name="description" content="Thank you for submitting your custom product request to ApexMart.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="ApexMart — Request Received">
+    <meta property="og:description" content="Confirmation of your custom product request.">
+    <meta property="og:image" content="images/apexmart-hero.webp">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="form-response.html">
+
+    <!-- Stylesheets & Fonts -->
+    <link rel="stylesheet" href="styles/apexmart-small.css">
+    <link rel="stylesheet" href="styles/apexmart-large.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="../apexmart/images/apexmar-favicon.ico">
+
+    <!-- External ES Modules -->
+    <script type="module" src="scripts/apexmart.mjs"></script>
+    <script type="module" src="scripts/time-date.mjs"></script>
+</head>
+<body>
+
+    <!-- Header Navigation Section -->
+    <header>
+        <div class="site-branding" id="site-branding">
+            <img src="images/apexmart-logo.webp" alt="ApexMart Logo" loading="eager" width="45" height="45">
+            <span>ApexMart <br>Digital & Fashion</span>
+        </div>
+
+        <div class="header-controls">
+            <!-- Theme Toggle -->
+            <button id="theme-btn" class="icon-btn" aria-label="Toggle Theme" type="button">🌓</button>
+            <!-- Cart Trigger Button -->
+            <button id="cart-btn" class="icon-btn" aria-label="Open Cart" type="button">🛒 <span id="cart-count">0</span></button>
+            <!-- Hamburger Toggle -->
+            <button id="ham-btn" class="hamburger" aria-label="Toggle navigation" type="button">☰</button>
+        </div>
+
+        <nav class="navigation" id="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="response-main-container">
+        <section class="response-card">
+            <h1>✅ Request Received!</h1>
+            <p>Thank you for submitting your custom product request. Our sourcing team is reviewing your specifications and will get in touch with you shortly.</p>
+
+            <div id="form-data-display" class="form-data-summary">
+                <h2>Submitted Request Details</h2>
+                <ul id="submitted-params-list" class="params-list">
+                    <!-- Dynamic details injected via scripts/form-response.mjs -->
+                </ul>
+            </div>
+
+            <div class="response-actions">
+                <a href="shop.html" class="hero-btn">Return to Shop</a>
+                <a href="index.html" class="secondary-btn">Go to Home</a>
+            </div>
+        </section>
+
+        <!-- Shopping Cart Modal / Drawer -->
+        <dialog id="cart-modal" class="modal" aria-labelledby="cart-title">
+            <div class="modal-content">
+            <button type="button" id="close-cart-btn" class="close-modal-btn" aria-label="Close shopping cart">❌</button>
+            <h2 id="cart-title">Your Shopping Cart</h2>
+                <div id="cart-items-container">
+                    <!-- JS renders items from localStorage here -->
+                </div>
+                <div class="cart-footer">
+                    <p>Total: <strong id="cart-total">$0.00</strong></p>
+                    <button type="button" class="checkout-btn">Proceed to Checkout</button>
+                </div>
+            </div>
+        </dialog>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-info">
+            <p><strong>ApexMart</strong></p>
+            <p>NO: 10, Duke Runway Avenue</p>
+            <p>Calabar, Cross River State, Nigeria</p>
+            <p>apexmart@shopping.org</p>
+            <p>+234-785-468-7001</p>
+        </div>
+
+        <div class="socials">
+            <a href="https://instagram.com/22nd_liq?exln=MW00cjFhZWFlYWs5ag%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
+                <img src="images/instagram-brands-solid.svg" alt="Instagram Icon" loading="lazy" width="20" height="20">
+            </a>
+            <a href="https://www.linkedin.com/in/samuel-asian-b71644352" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                <img src="images/linkedin-brands-solid.svg" alt="LinkedIn Icon" loading="lazy" width="20" height="20">
+            </a>
+            <a href="https://www.facebook.com/share/1NMB2LXXo8/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile">
+                <img src="images/facebook-brands-solid.svg" alt="Facebook Icon" loading="lazy" width="20" height="20">
+            </a>
+        </div>
+
+        <div class="footer-meta">
+            <p>© <span id="currentYear"></span> || Samuel Christian Asian 🌺 || Cross River, Nigeria 🌲</p>
+            <p>Last Modified: <span id="lastModified"></span></p>
+            <!-- <p><a href="attributions.html" class="attribution-link">Attributions</a></p> -->
+        </div>
+    </footer>
+
+</body>
+</html>
